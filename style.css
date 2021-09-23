@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: inherit;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #f8f1ec;
+  background-image: linear-gradient(to top left, #c103e8 0%, #27003d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ------ */
+/* HEADER */
+/* ------ */
+header {
+  width: 100vw;
+  height: auto;
+  position: absolute;
+  top: 0px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  font-family: inherit;
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 400;
+}
+
+/* Botões */
+.botao {
+  font-family: inherit;
+  font-weight: 600;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 12px;
+  margin: 0 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.15s;
+}
+
+.botao:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 15px 9px rgba(0, 0, 0, 0.15);
+}
+
+.botao:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.botao:focus,
+input:focus {
+  outline: none;
+}
+
+.botao-info {
+  text-transform: lowercase;
+  padding: 12px 30px;
+}
+
+.botao-proxima-partida {
+  position: absolute;
+  left: 50%;
+  bottom: 15%;
+  transform: translateX(-50%);
+  margin: 0;
+}
+
+.container-botoes-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.botao-modal {
+  font-weight: 300;
+  margin: 10px 0;
+  width: 80%;
+  color: white;
+  background-color: #27003d;
+}
+
+.botao-modal-jogadores {
+  width: 50%;
+}
+.botao-modal-jogadores:hover,
+.botao-modal-modo:hover {
+  color: #27003d;
+  font-weight: 600;
+  transition: 0.15s all;
+}
+
+.campo-nome {
+  font-family: inherit;
+  font-weight: 600;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid #27003d;
+  border-radius: 10px;
+  width: 80%;
+  padding: 12px;
+  margin: 10px;
+  text-transform: uppercase;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ---- */
+/* MAIN */
+/* ---- */
+/* Mensagem */
+.mensagem {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: inherit;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+/* Jogadores 0 e 1 */
+.jogador {
+  width: 200px;
+  height: auto;
+  border-radius: 50px;
+  padding: 15px 20px;
+  color: #333;
+  background-color: rgba(190, 190, 190, 0.75);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.jogador-0 {
+  position: absolute;
+  left: 16.5%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.jogador-1 {
+  position: absolute;
+  right: 16.5%;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+
+.jogador-ativo {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.vencedor {
+  background-color: #222;
+  color: white;
+  transition: 0.15s all;
+}
+
+.placar {
+  font-family: inherit;
+  font-weight: 300;
+  font-size: 70px;
+  text-align: center;
+  margin-top: 5px;
+  transition: 0.15s all;
+}
+
+.fa-male {
+  margin: 20px 0;
+  font-size: 70px;
+}
+
+.jogador-0 .fa-male {
+  color: darkorange;
+}
+
+.jogador-1 .fa-male {
+  color: deepskyblue;
+}
+
+.nome-jogador {
+  font-family: inherit;
+  font-size: 25px;
+  font-weight: 700;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+/* Tabuleiro */
+.tabuleiro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-collapse: collapse;
+}
+
+td {
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+}
+
+.linha {
+  border-top: 2px solid #f8f1ec;
+}
+.linha:first-child {
+  border-top: 2px solid transparent;
+}
+.linha:last-child {
+  border-bottom: 2px solid transparent;
+}
+
+.casa {
+  border-right: 2px solid #f8f1ec;
+  border-left: 2px solid #f8f1ec;
+  text-align: center;
+  font-size: 60px;
+  line-height: 98px;
+}
+.casa:first-child {
+  border-left: 2px solid transparent;
+}
+.casa:last-child {
+  border-right: 2px solid transparent;
+}
+
+.fa-circle {
+  font-size: 50px;
+}
+
+/* MODAL INFO */
+.botao-fecha-modal {
+  margin-right: 50px;
+  margin-top: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.modal {
+  background-color: white;
+  font-family: inherit;
+  font-size: 20px;
+  color: #222;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  border-radius: 50px;
+  padding: 50px;
+  z-index: 9999;
+}
+
+h2 {
+  margin: 60px 0 30px 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.modal-texto {
+  text-align: justify;
+  margin-bottom: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 999;
+}

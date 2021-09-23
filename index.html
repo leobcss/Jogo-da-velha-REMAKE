@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Jogo da Velha</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>JOGO DA VELHA</h1>
+      <div>
+        <button class="botao botao-jogadores">Jogadores</button>
+        <button class="botao botao-modo">Modo</button>
+        <button class="botao botao-reset">Reset</button>
+        <button class="botao botao-info">i</button>
+      </div>
+    </header>
+
+    <main>
+      <p class="mensagem">Partida 1</p>
+
+      <section class="jogador jogador-0 jogador-ativo">
+        <p class="placar" id="placar-0">0</p>
+        <i class="fas fa-male"> </i>
+        <h2 class="nome-jogador" id="nome-jogador-0">Jogador 1</h2>
+      </section>
+
+      <section class="jogador jogador-1">
+        <p class="placar" id="placar-1">0</p>
+        <i class="fas fa-male"></i>
+        <h2 class="nome-jogador" id="nome-jogador-1">Jogador 2</h2>
+      </section>
+
+      <table class="tabuleiro">
+        <tr class="linha">
+          <td class="casa" id="a1"></td>
+          <td class="coluna casa" id="a2"></td>
+          <td class="casa" id="a3"></td>
+        </tr>
+        <tr class="linha">
+          <td class="casa" id="b1"></td>
+          <td class="coluna casa" id="b2"></td>
+          <td class="casa" id="b3"></td>
+        </tr>
+        <tr class="linha">
+          <td class="casa" id="c1"></td>
+          <td class="coluna casa" id="c2"></td>
+          <td class="casa" id="c3"></td>
+        </tr>
+      </table>
+
+      <button class="botao botao-proxima-partida hidden">
+        Próxima Partida
+      </button>
+
+      <div class="modal modal-jogadores hidden">
+        <button class="botao botao-fecha-modal">x</button>
+        <h2>Jogador 1 escolha "x" ou "o"</h2>
+        <div class="container-botoes-modal">
+          <input
+            type="text"
+            name="nome"
+            placeholder="Nome do Jogador 1"
+            value="Jogador 1"
+            class="campo-nome"
+            id="input-0"
+          />
+          <input
+            type="text"
+            name="nome"
+            placeholder="Nome do Jogador 2"
+            value="Jogador 2"
+            class="campo-nome"
+            id="input-1"
+          />
+          <button
+            class="botao botao-modal botao-modal-jogadores"
+            id="botao-X-modal-jogadores"
+          >
+            X
+          </button>
+          <button
+            class="botao botao-modal botao-modal-jogadores"
+            id="botao-O-modal-jogadores"
+          >
+            O
+          </button>
+          <button
+            class="botao botao-modal botao-modal-jogadores"
+            id="botao-pronto-modal-jogadores"
+          >
+            Pronto
+          </button>
+        </div>
+      </div>
+
+      <div class="modal modal-modo hidden">
+        <button class="botao botao-fecha-modal">x</button>
+        <h2>Escolha o modo da partida</h2>
+        <div class="container-botoes-modal">
+          <button
+            class="botao botao-modal botao-modal-modo"
+            id="partida-simples"
+          >
+            Partida Simples
+          </button>
+          <button class="botao botao-modal botao-modal-modo" id="melhor-de-3">
+            Melhor de 3
+          </button>
+          <button class="botao botao-modal botao-modal-modo" id="melhor-de-5">
+            Melhor de 5
+          </button>
+        </div>
+      </div>
+
+      <div class="modal modal-info hidden">
+        <button class="botao botao-fecha-modal">x</button>
+        <h2>Como Jogar</h2>
+        <p class="modal-texto">
+          Insira o nome dos jogadores 1 e 2 se quiser. O jogador 1 escolhe se
+          vai jogar com "X" ou "O". Escolha o modo da partida: partida simples,
+          melhor de 3 ou melhor de 5. Por padrão o jogo está setado para partida
+          simples e o jogador 1 começa com "X".
+          <b>Quem preencher uma linha por completo ganha a partida!</b>
+        </p>
+      </div>
+
+      <div class="overlay hidden"></div>
+    </main>
+
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+      integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
