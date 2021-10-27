@@ -17,3 +17,6 @@ Recriação do tradicional Jogo da Velha com uma interface limpa, moderna e mini
 - HTML
 - CSS
 - JavaScript
+
+## ACESSO:
+Você pode acessar o jogo em https://jogodavelha-remake.netlify.app/ 
